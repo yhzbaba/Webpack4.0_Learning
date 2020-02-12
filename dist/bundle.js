@@ -86,14 +86,27 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/img/mountain.jpg":
+/*!******************************!*\
+  !*** ./src/img/mountain.jpg ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"images/d65de718f98c28c21b87754d9404b3de.jpg\");\n\n//# sourceURL=webpack:///./src/img/mountain.jpg?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("let a = 5;\r\nlet b = 12;\r\n\n\n//# sourceURL=webpack:///./src/index.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _img_mountain_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./img/mountain.jpg */ \"./src/img/mountain.jpg\");\n\r\n\r\nlet a = 5;\r\nlet b = 12;\r\n\r\nlet background = document.getElementById(\"background\");\r\nbackground.src = _img_mountain_jpg__WEBPACK_IMPORTED_MODULE_0__[\"default\"];\r\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
