@@ -1,12 +1,5 @@
-import style from "./index.scss";
-import createMountain from "./createMountain";
-import mountain from "./img/mountain.jpg";
-
-var img = new Image();
-img.src = mountain;
-img.classList.add(style.mountain);
+import "./index.scss";
 
 var root = document.getElementById("root");
-root.append(img);
 
-createMountain();
+root.innerHTML = '<div class="iconfont iconicon-test">abc</div>';

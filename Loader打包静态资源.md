@@ -98,3 +98,12 @@ module.exports = {
 test:/\.scss$/,
 use:['style-loader','css-loader','sass-loader','postcss-loader']
 ```
+
+## 字体文件打包
+
+先下载字体项目
+然后把 eot svg ttf woff 拉进来
+复制 iconfont.css 中的东西 比如说到 index.scss 中 然后改删的删 改路径的改路径
+然后在 index.js(举例)中引用
+最后 innerHtml 中的标签加上 index.scss 中的类
+最后这四种文件用 file-loader 加载即可
