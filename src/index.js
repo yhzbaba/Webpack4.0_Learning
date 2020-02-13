@@ -1,7 +1,12 @@
+import style from "./index.scss";
+import createMountain from "./createMountain";
 import mountain from "./img/mountain.jpg";
 
-let a = 5;
-let b = 12;
+var img = new Image();
+img.src = mountain;
+img.classList.add(style.mountain);
 
-let background = document.getElementById("background");
-background.src = mountain;
+var root = document.getElementById("root");
+root.append(img);
+
+createMountain();

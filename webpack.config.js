@@ -14,11 +14,33 @@ module.exports = {
       {
         test: /\.(jpg|png|gif)$/,
         use: {
-          loader: "file-loader",
+          loader: "url-loader",
           options: {
-            outputPath: "images/"
+            outputPath: "images/",
+            //placeholder 占位符
+            name: "[name].[ext]",
+            limit: 2 * 1024
           }
         }
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"]
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          "style-loader",
+          {
+            loader: "css-loader",
+            options: {
+              importLoaders: 2,
+              modules: true
+            }
+          },
+          "sass-loader",
+          "postcss-loader"
+        ]
       }
     ]
   }
