@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
+const webapack = require("webpack");
 
 module.exports = {
   mode: "development",
@@ -19,7 +20,9 @@ module.exports = {
     proxy: {
       "/api": "http://localhost:3000"
     },
-    port: 8090
+    port: 8090,
+    hot: true,
+    hotOnly: true
   },
   module: {
     rules: [
@@ -37,7 +40,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"]
+        use: ["style-loader", "css-loader", "postcss-loader"]
       },
       {
         test: /\.scss$/,
@@ -65,6 +68,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/index.html"
     }),
-    new CleanWebpackPlugin.CleanWebpackPlugin()
+    new CleanWebpackPlugin.CleanWebpackPlugin(),
+    new webapack.HotModuleReplacementPlugin()
   ]
 };
