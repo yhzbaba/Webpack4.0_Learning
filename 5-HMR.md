@@ -26,7 +26,7 @@ plugins: [
     template: "./src/index.html"
   }),
   new CleanWebpackPlugin.CleanWebpackPlugin(),
-  new webapack.HotModuleReplacementPlugin()
+  new webpack.HotModuleReplacementPlugin()
 ];
 ```
 
