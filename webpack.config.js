@@ -10,7 +10,6 @@ module.exports = {
     yhz: "./src/index.js"
   },
   output: {
-    publicPath: "/",
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist")
   },
@@ -75,5 +74,8 @@ module.exports = {
     }),
     new CleanWebpackPlugin.CleanWebpackPlugin(),
     new webapack.HotModuleReplacementPlugin()
-  ]
+  ],
+  optimization: {
+    usedExports: true
+  }
 };
