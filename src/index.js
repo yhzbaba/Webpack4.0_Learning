@@ -1,5 +1,15 @@
-import { add } from "./math";
+// import _ from "lodash";
 
-add(1, 2);
+// console.log(_.join(["a", "b", "c"], "***"));
 
-console.log(6);
+function getComponent() {
+  return import("lodash").then(({ default: _ }) => {
+    var element = document.createElement("div");
+    element.innerHTML = _.join(["yhz", "hahaha"], "-");
+    return element;
+  });
+}
+
+getComponent().then(element => {
+  document.body.appendChild(element);
+});
