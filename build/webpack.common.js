@@ -60,5 +60,27 @@ module.exports = {
       template: "./src/index.html"
     }),
     new CleanWebpackPlugin.CleanWebpackPlugin()
-  ]
+  ],
+  optimization: {
+    splitChunks: {
+      chunks: "all",
+      minSize: 0,
+      minChunks: 1,
+      maxAsyncRequests: 5,
+      maxInitialRequests: 3,
+      automaticNameDelimiter: "~",
+      name: true,
+      cacheGroups: {
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10
+        },
+        default: {
+          priority: -20,
+          reuseExistingChunk: true,
+          filename: "common.js"
+        }
+      }
+    }
+  }
 };
