@@ -1,6 +1,8 @@
 {
   "name": "webpack_study_3",
-  "sideEffects": false,
+  "sideEffects": [
+    "*.css"
+  ],
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,7 +11,7 @@
     "bundle": "webpack",
     "dev": "webpack-dev-server --config ./build/webpack.dev.js",
     "build": "webpack --config ./build/webpack.prod.js",
-    "dev-build": "webpack --profile --json > stats.json --config ./build/webpack.dev.js"
+    "dev-build": "webpack --config ./build/webpack.dev.js"
   },
   "keywords": [],
   "author": "",
@@ -32,7 +34,9 @@
     "html-webpack-plugin": "^3.2.0",
     "jquery": "^3.4.1",
     "lodash": "^4.17.15",
+    "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.13.1",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-loader": "^3.0.0",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.1.3",

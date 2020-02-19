@@ -1,6 +1,8 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 module.exports = {
   entry: {
@@ -26,12 +28,12 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader", "postcss-loader"]
+        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"]
       },
       {
         test: /\.scss$/,
         use: [
-          "style-loader",
+          MiniCssExtractPlugin.loader,
           {
             loader: "css-loader",
             options: {
@@ -59,9 +61,14 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/index.html"
     }),
-    new CleanWebpackPlugin.CleanWebpackPlugin()
+    new CleanWebpackPlugin.CleanWebpackPlugin(),
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+      chunkFilename: "[name].chunk.css"
+    })
   ],
   optimization: {
+    usedExports: true,
     splitChunks: {
       chunks: "all",
       minSize: 0,
@@ -75,12 +82,19 @@ module.exports = {
           test: /[\\/]node_modules[\\/]/,
           priority: -10
         },
+        styles: {
+          name: "styles",
+          test: /\.css$/,
+          chunks: "all",
+          enforce: true
+        },
         default: {
           priority: -20,
           reuseExistingChunk: true,
           filename: "common.js"
         }
       }
-    }
+    },
+    minimizer: [new OptimizeCssAssetsPlugin()]
   }
 };
