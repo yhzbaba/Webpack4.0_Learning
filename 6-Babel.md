@@ -83,16 +83,16 @@ presets 参数换成 plugins 参数(babel-loader 中的 plugins)
 
 ```
 plugins: [
-            [
-              "@babel/plugin-transform-runtime",
-              {
-                corejs: 2,
-                helpers: true,
-                regenerator: true,
-                useESModules: false
-              }
-            ]
-          ]
+  [
+    "@babel/plugin-transform-runtime",
+    {
+      corejs: 2,
+      helpers: true,
+      regenerator: true,
+      useESModules: false
+    }
+  ]
+]
 ```
 
 babel-loader 里面的 options 可以扔到.babelrc 里面去 但是.babelrc 不能写注释
