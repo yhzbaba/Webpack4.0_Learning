@@ -1,7 +1,12 @@
-import _ from "lodash";
-import $ from "jquery";
+// import _ from "lodash";
+// import $ from "jquery";
+// import { ui } from "./jquery.ui";
 
-const dom = $("<div>");
-dom.html(_.join(["yhz", "is your baba"], " "));
-$(body).append(dom);
-$(body).append(dom);
+// ui();
+
+// const dom = $("<div>");
+// dom.html(_.join(["yhz", "is your baba"], " "));
+// $("body").append(dom);
+// $("body").append(dom);
+
+console.log(this);
