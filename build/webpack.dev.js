@@ -1,6 +1,7 @@
 const webpack = require("webpack");
 const merge = require("webpack-merge");
 const commonConfig = require("./webpack.common");
+const path = require("path");
 
 const devConfig = {
   mode: "development",
@@ -15,7 +16,12 @@ const devConfig = {
     hot: true,
     hotOnly: true
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()]
+  plugins: [new webpack.HotModuleReplacementPlugin()],
+  output: {
+    filename: "[name].js",
+    chunkFilename: "[name].chunk.js",
+    path: path.resolve(__dirname, "../dist")
+  }
 };
 
 module.exports = merge(commonConfig, devConfig);

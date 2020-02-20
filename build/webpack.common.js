@@ -1,4 +1,3 @@
-const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -7,10 +6,6 @@ const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 module.exports = {
   entry: {
     yhz: "./src/index.js"
-  },
-  output: {
-    filename: "[name].js",
-    path: path.resolve(__dirname, "../dist")
   },
   module: {
     rules: [
@@ -96,5 +91,6 @@ module.exports = {
       }
     },
     minimizer: [new OptimizeCssAssetsPlugin()]
-  }
+  },
+  performance: false
 };
