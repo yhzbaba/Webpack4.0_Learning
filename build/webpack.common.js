@@ -2,7 +2,6 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const webpack = require("webpack");
 
 module.exports = {
   entry: {
@@ -52,9 +51,6 @@ module.exports = {
         use: [
           {
             loader: "babel-loader"
-          },
-          {
-            loader: "imports-loader?this=>window"
           }
         ]
       }
@@ -68,10 +64,6 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "[name].css",
       chunkFilename: "[name].chunk.css"
-    }),
-    new webpack.ProvidePlugin({
-      $: "jquery",
-      _: "lodash"
     })
   ],
   optimization: {
