@@ -1,49 +1,30 @@
 {
-  "name": "webpack_study_3",
-  "sideEffects": [
-    "*.css"
-  ],
+  "name": "webpack_study",
   "version": "1.0.0",
-  "description": "",
+  "description": "Webpack4.0",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --config ./build/webpack.dev.js",
-    "build": "webpack --config ./build/webpack.prod.js",
-    "start": "http-server dist"
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yhzbaba/Webpack4.0_Learning.git"
   },
   "keywords": [],
-  "author": "yhz",
-  "license": "MIT",
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yhzbaba/Webpack4.0_Learning/issues"
+  },
+  "homepage": "https://github.com/yhzbaba/Webpack4.0_Learning#readme",
   "devDependencies": {
-    "@babel/core": "^7.8.4",
-    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
-    "@babel/plugin-transform-runtime": "^7.8.3",
-    "@babel/polyfill": "^7.8.3",
-    "@babel/preset-env": "^7.8.4",
-    "@babel/runtime": "^7.8.4",
-    "@babel/runtime-corejs2": "^7.8.4",
-    "@rollup/plugin-node-resolve": "^7.1.1",
-    "autoprefixer": "^9.7.4",
-    "babel-loader": "^8.0.6",
-    "clean-webpack-plugin": "^3.0.0",
-    "core-js": "^3.6.4",
-    "css-loader": "^3.4.2",
-    "file-loader": "^5.0.2",
-    "html-webpack-plugin": "^3.2.0",
-    "http-server": "^0.12.1",
+    "@types/jquery": "^3.3.32",
+    "@types/lodash": "^4.14.149",
     "jquery": "^3.4.1",
     "lodash": "^4.17.15",
-    "mini-css-extract-plugin": "^0.9.0",
-    "node-sass": "^4.13.1",
-    "optimize-css-assets-webpack-plugin": "^5.0.3",
-    "postcss-loader": "^3.0.0",
-    "sass-loader": "^8.0.2",
-    "style-loader": "^1.1.3",
-    "url-loader": "^3.0.0",
-    "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.10.3",
-    "webpack-merge": "^4.2.2",
-    "workbox-webpack-plugin": "^5.0.0"
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.8.2",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11"
   }
 }
